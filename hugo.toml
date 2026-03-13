@@ -3,7 +3,7 @@ languageCode = "en-us"
 title = "Midwest Open Source Alliance"
 enableRobotsTXT = true
 buildDrafts = false
-buildFuture = false
+buildFuture = true
 buildExpired = false
 enableEmoji = true
 
