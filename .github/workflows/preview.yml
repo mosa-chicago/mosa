@@ -8,11 +8,9 @@ on:
       - reopened
       - closed
 
-# Minimum permissions: read code, write Pages preview, write PR comments.
+# Only needs to read code and write PR comments — no GitHub Pages access required.
 permissions:
   contents: read
-  pages: write
-  id-token: write
   pull-requests: write
 
 # One preview deployment per PR; cancel in-progress build if a new push arrives.
@@ -25,15 +23,12 @@ defaults:
     shell: bash
 
 jobs:
-  # ── Build & deploy a site preview (skipped when the PR is closed) ──────────
+  # ── Build & deploy a site preview via Netlify (skipped when the PR is closed) ──
   deploy-preview:
     if: github.event.action != 'closed'
     runs-on: ubuntu-latest
     env:
       HUGO_VERSION: 0.147.0
-    environment:
-      name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
     steps:
       - name: Install Hugo CLI
         run: |
@@ -65,22 +60,25 @@ jobs:
         run: |
           hugo --gc --minify
 
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./public
-
-      - name: Deploy preview
+      - name: Deploy preview to Netlify
         id: deploy
-        uses: actions/deploy-pages@v4
-        with:
-          preview: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          npm install --global netlify-cli
+          OUTPUT=$(netlify deploy \
+            --dir=public \
+            --alias=pr-${{ github.event.pull_request.number }} \
+            --message="PR #${{ github.event.pull_request.number }} — ${{ github.event.pull_request.head.sha }}" \
+            --json)
+          echo "url=$(echo "$OUTPUT" | jq -r '.deploy_url')" >> "$GITHUB_OUTPUT"
 
       - name: Post or update preview comment
         uses: actions/github-script@v7
         with:
           script: |
-            const previewUrl = '${{ steps.deploy.outputs.page_url }}';
+            const previewUrl = '${{ steps.deploy.outputs.url }}';
             const sha       = '${{ github.event.pull_request.head.sha }}'.slice(0, 7);
             const runUrl    = `${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}`;
             const marker    = '<!-- mosa-preview-comment -->';
@@ -88,13 +86,13 @@ jobs:
               marker,
               '## 🔍 Site Preview',
               '',
-              `A live preview of this pull request has been deployed:`,
+              'A live preview of this pull request has been deployed:',
               '',
               `**[${previewUrl}](${previewUrl})**`,
               '',
               `Built from commit \`${sha}\` — [view run](${runUrl})`,
               '',
-              '_The preview will be removed automatically when this PR is closed._',
+              '_The preview will be removed when this PR is closed._',
             ].join('\n');
 
             const { data: comments } = await github.rest.issues.listComments({
