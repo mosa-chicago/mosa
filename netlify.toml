@@ -6,3 +6,12 @@
   HUGO_VERSION = "0.147.0"
   HUGO_ENV     = "production"
   TZ           = "America/Chicago"
+
+# Deploy previews: use the Netlify preview URL as the base so all links
+# are relative to the preview domain rather than the production domain.
+[context.deploy-preview]
+  command = "hugo --gc --baseURL \"$DEPLOY_PRIME_URL\""
+
+# Branch deploys (e.g. PRs deployed via CLI with --alias): same as above.
+[context.branch-deploy]
+  command = "hugo --gc --baseURL \"$DEPLOY_PRIME_URL\""
