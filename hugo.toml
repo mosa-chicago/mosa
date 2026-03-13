@@ -1,0 +1,105 @@
+baseURL = "https://midwestopensourcealliance.org/"
+languageCode = "en-us"
+title = "Midwest Open Source Alliance"
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+enableEmoji = true
+
+[params]
+  env = "production"
+  title = "Midwest Open Source Alliance"
+  description = "Midwest Open Source Alliance promotes the education, support and development of Drupal and related open source software within the Midwest Drupal community and beyond."
+  keywords = ["Drupal", "open source", "Midwest", "nonprofit", "MOSA"]
+  author = "MOSA"
+  images = ["/images/mosa-social.png"]
+  DateFormat = "January 2, 2006"
+  defaultTheme = "light"
+  disableThemeToggle = false
+  ShowReadingTime = false
+  ShowShareButtons = false
+  ShowPostNavLinks = false
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = false
+  disableSpecial1stPost = false
+  disableScrollToTop = false
+  comments = false
+  hidemeta = true
+  hideSummary = false
+  showtoc = true
+  tocopen = false
+
+  [params.homeInfoParams]
+    Title = "Midwest Open Source Alliance"
+    Content = "Promoting the education, support, and development of Drupal and related open source software within the Midwest Drupal community and beyond. We are an Illinois nonprofit and a federal 501(c)(3) tax-exempt organization."
+
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/mosa-chicago"
+
+  [params.label]
+    text = "MOSA"
+    icon = "/images/mosa-icon.png"
+    iconHeight = 35
+
+[menu]
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 10
+  [[menu.main]]
+    identifier = "board"
+    name = "Board"
+    url = "/board/"
+    weight = 20
+  [[menu.main]]
+    identifier = "events"
+    name = "Events"
+    url = "/events/"
+    weight = 30
+  [[menu.main]]
+    identifier = "meetings"
+    name = "Meetings"
+    url = "/meetings/"
+    weight = 40
+  [[menu.main]]
+    identifier = "bylaws"
+    name = "Bylaws"
+    url = "/bylaws/"
+    weight = 50
+  [[menu.main]]
+    identifier = "docs"
+    name = "Handbook"
+    url = "/docs/"
+    weight = 60
+  [[menu.main]]
+    identifier = "sponsor"
+    name = "Sponsor"
+    url = "/sponsor/"
+    weight = 70
+  [[menu.main]]
+    identifier = "donate"
+    name = "Donate"
+    url = "/donate/"
+    weight = 80
+  [[menu.main]]
+    identifier = "contact"
+    name = "Contact"
+    url = "/contact/"
+    weight = 90
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    noClasses = false
+
+[module]
+  [[module.imports]]
+    path = "github.com/adityatelange/hugo-PaperMod"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
