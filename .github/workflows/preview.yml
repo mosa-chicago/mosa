@@ -1,0 +1,156 @@
+name: PR Preview
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - closed
+
+# Minimum permissions: read code, write Pages preview, write PR comments.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  pull-requests: write
+
+# One preview deployment per PR; cancel in-progress build if a new push arrives.
+concurrency:
+  group: preview-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  # ── Build & deploy a site preview (skipped when the PR is closed) ──────────
+  deploy-preview:
+    if: github.event.action != 'closed'
+    runs-on: ubuntu-latest
+    env:
+      HUGO_VERSION: 0.147.0
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - name: Install Hugo CLI
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb \
+            https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+
+      - name: Checkout PR
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+
+      - name: Setup Go cache for Hugo modules
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/go-build
+            ~/go/pkg/mod
+          key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-go-
+
+      - name: Build with Hugo
+        env:
+          HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
+          HUGO_ENVIRONMENT: production
+          TZ: America/Chicago
+        run: |
+          hugo --gc --minify
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+      - name: Deploy preview
+        id: deploy
+        uses: actions/deploy-pages@v4
+        with:
+          preview: true
+
+      - name: Post or update preview comment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const previewUrl = '${{ steps.deploy.outputs.page_url }}';
+            const sha       = '${{ github.event.pull_request.head.sha }}'.slice(0, 7);
+            const runUrl    = `${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}`;
+            const marker    = '<!-- mosa-preview-comment -->';
+            const body      = [
+              marker,
+              '## 🔍 Site Preview',
+              '',
+              `A live preview of this pull request has been deployed:`,
+              '',
+              `**[${previewUrl}](${previewUrl})**`,
+              '',
+              `Built from commit \`${sha}\` — [view run](${runUrl})`,
+              '',
+              '_The preview will be removed automatically when this PR is closed._',
+            ].join('\n');
+
+            const { data: comments } = await github.rest.issues.listComments({
+              owner:        context.repo.owner,
+              repo:         context.repo.repo,
+              issue_number: context.issue.number,
+            });
+
+            const existing = comments.find(c => c.body && c.body.includes(marker));
+
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner:      context.repo.owner,
+                repo:       context.repo.repo,
+                comment_id: existing.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner:        context.repo.owner,
+                repo:         context.repo.repo,
+                issue_number: context.issue.number,
+                body,
+              });
+            }
+
+  # ── Update the comment when the PR is closed ───────────────────────────────
+  close-preview:
+    if: github.event.action == 'closed'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Update preview comment on close
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const marker = '<!-- mosa-preview-comment -->';
+            const body   = [
+              marker,
+              '## 🔍 Site Preview',
+              '',
+              '_This pull request has been closed. The preview deployment has been removed._',
+            ].join('\n');
+
+            const { data: comments } = await github.rest.issues.listComments({
+              owner:        context.repo.owner,
+              repo:         context.repo.repo,
+              issue_number: context.issue.number,
+            });
+
+            const existing = comments.find(c => c.body && c.body.includes(marker));
+
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner:      context.repo.owner,
+                repo:       context.repo.repo,
+                comment_id: existing.id,
+                body,
+              });
+            }
