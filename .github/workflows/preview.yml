@@ -58,7 +58,7 @@ jobs:
           HUGO_ENVIRONMENT: production
           TZ: America/Chicago
         run: |
-          hugo --gc --minify
+          hugo --gc --minify --baseURL "/"
 
       - name: Deploy preview to Netlify
         id: deploy
