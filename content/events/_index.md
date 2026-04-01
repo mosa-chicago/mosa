@@ -1,6 +1,11 @@
 ---
 title: "Sponsored Events"
 description: "Events fiscally sponsored by or supported by the Midwest Open Source Alliance."
+cover:
+  image: "images/events/gala-2026-hero.svg"
+  alt: "MOSA Sponsored Events"
+  relative: false
+  hiddenInList: false
 ---
 
 ## Sponsored Events

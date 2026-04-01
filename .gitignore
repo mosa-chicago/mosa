@@ -17,3 +17,6 @@ Thumbs.db
 
 # Node modules (if any)
 node_modules/
+
+# Hugo module vendor directory (local dev use only)
+_vendor/

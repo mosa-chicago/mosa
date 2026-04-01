@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="rg1" cx="30%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#1a5c8a" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#0d2c52" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="rg2" cx="75%" cy="65%" r="55%">
+      <stop offset="0%" stop-color="#0e6b42" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#0d2c52" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="480" fill="#0d2c52"/>
+  <rect width="1200" height="480" fill="url(#rg1)"/>
+  <rect width="1200" height="480" fill="url(#rg2)"/>
+  <rect width="1200" height="480" fill="url(#grid)"/>
+  <!-- Decorative circles -->
+  <circle cx="120" cy="80" r="180" fill="rgba(255,255,255,0.02)"/>
+  <circle cx="1080" cy="400" r="220" fill="rgba(255,255,255,0.025)"/>
+  <circle cx="600" cy="240" r="300" fill="rgba(255,255,255,0.015)"/>
+</svg>

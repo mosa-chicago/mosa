@@ -30,6 +30,12 @@ enableEmoji = true
   showtoc = true
   tocopen = false
 
+  [params.cover]
+    hidden = false
+    hiddenInList = false
+    hiddenInSingle = false
+    responsiveImages = false
+
   [params.homeInfoParams]
     Title = "Midwest Open Source Alliance"
     Content = "Promoting the education, support, and development of Drupal and related open source software within the Midwest Drupal community and beyond. We are an Illinois nonprofit and a federal 501(c)(3) tax-exempt organization."

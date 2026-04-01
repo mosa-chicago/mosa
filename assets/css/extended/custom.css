@@ -1,0 +1,280 @@
+/* ============================================================
+   MOSA Custom Styles
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   Hero Banner (Homepage)
+   ---------------------------------------------------------- */
+.home-hero {
+  position: relative;
+  min-height: 420px;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 40px;
+  background: linear-gradient(135deg, #0d2c52 0%, #1a5c8a 55%, #0e6b42 100%);
+}
+
+.home-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/images/hero-bg.svg") center/cover no-repeat;
+  opacity: 0.25;
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 60px 32px;
+  max-width: 720px;
+}
+
+.hero-content h1 {
+  color: #ffffff;
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.hero-content .hero-sub {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.hero-button {
+  display: inline-block;
+  padding: 11px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none !important;
+  transition: background 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+  background: #ffffff;
+  color: #0d2c52 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hero-button:hover {
+  background: #f0f7ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+.hero-button.outline {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  color: #ffffff !important;
+  box-shadow: none;
+}
+
+.hero-button.outline:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+  .home-hero {
+    min-height: 320px;
+  }
+}
+
+/* ----------------------------------------------------------
+   Post / Entry Cards
+   ---------------------------------------------------------- */
+.post-entry {
+  border-radius: 10px;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  overflow: hidden;
+}
+
+.post-entry:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* ----------------------------------------------------------
+   Cover Images on Single Pages & Lists
+   ---------------------------------------------------------- */
+.entry-cover {
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.entry-cover img {
+  width: 100%;
+  max-height: 480px;
+  object-fit: cover;
+  display: block;
+}
+
+.entry-cover figcaption {
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  color: var(--secondary);
+  font-style: italic;
+}
+
+/* ----------------------------------------------------------
+   Section / Page Headers
+   ---------------------------------------------------------- */
+.page-header {
+  border-left: 4px solid var(--primary);
+  padding-left: 16px;
+  margin-bottom: 32px;
+}
+
+/* ----------------------------------------------------------
+   Photo Gallery Shortcode
+   ---------------------------------------------------------- */
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+  margin: 32px 0;
+}
+
+.photo-gallery img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: zoom-in;
+}
+
+.photo-gallery img:hover,
+.photo-gallery img:focus {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* ----------------------------------------------------------
+   Image Placeholder (for pages without real photos yet)
+   ---------------------------------------------------------- */
+.img-placeholder {
+  background: linear-gradient(135deg, #e8f0fe 0%, #d2e3fc 100%);
+  border: 2px dashed #8ab4f8;
+  border-radius: 10px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #5b7aab;
+  font-size: 0.9rem;
+  font-style: italic;
+  gap: 8px;
+  margin: 20px 0;
+}
+
+.img-placeholder svg {
+  opacity: 0.5;
+  width: 48px;
+  height: 48px;
+}
+
+/* ----------------------------------------------------------
+   Sponsor / Event Logo Grid
+   ---------------------------------------------------------- */
+.logo-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  margin: 24px 0;
+}
+
+.logo-grid img {
+  height: 60px;
+  width: auto;
+  filter: grayscale(40%);
+  transition: filter 0.2s ease, transform 0.15s ease;
+}
+
+.logo-grid img:hover {
+  filter: none;
+  transform: scale(1.05);
+}
+
+/* ----------------------------------------------------------
+   Highlight / Feature Cards
+   ---------------------------------------------------------- */
+.feature-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  margin: 32px 0;
+}
+
+.feature-card {
+  background: var(--entry);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 24px 20px;
+  text-align: center;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card .feature-icon {
+  font-size: 2.4rem;
+  margin-bottom: 12px;
+}
+
+.feature-card h3 {
+  font-size: 1rem;
+  margin: 0 0 8px;
+}
+
+.feature-card p {
+  font-size: 0.88rem;
+  color: var(--secondary);
+  margin: 0;
+}
+
+/* ----------------------------------------------------------
+   Responsive tweaks
+   ---------------------------------------------------------- */
+@media (max-width: 768px) {
+  .photo-gallery {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 10px;
+  }
+
+  .feature-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .feature-cards {
+    grid-template-columns: 1fr;
+  }
+}

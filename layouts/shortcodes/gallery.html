@@ -1,0 +1,13 @@
+{{/* gallery shortcode — usage: {{< gallery >}} img1.jpg|Caption 1 {{< /gallery >}} */}}
+{{- $images := split (.Inner | strings.TrimSpace) "\n" -}}
+<div class="photo-gallery" role="list">
+{{- range $i, $line := $images -}}
+  {{- $parts := split $line "|" -}}
+  {{- $src  := index $parts 0 | strings.TrimSpace -}}
+  {{- $alt  := printf "Gallery image %d" (add $i 1) -}}
+  {{- if gt (len $parts) 1 -}}{{- $alt = index $parts 1 | strings.TrimSpace -}}{{- end -}}
+  {{- if $src -}}
+  <img src="{{ $src }}" alt="{{ $alt }}" loading="lazy" tabindex="0" role="listitem">
+  {{- end -}}
+{{- end -}}
+</div>
