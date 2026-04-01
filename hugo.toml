@@ -46,7 +46,7 @@ enableEmoji = true
 
   [params.label]
     text = "MOSA"
-    icon = "/images/mosa-icon.svg"
+    icon = "/images/mosa-icon.png"
     iconHeight = 35
 
 [menu]
