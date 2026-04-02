@@ -96,6 +96,33 @@
   .home-hero {
     min-height: 320px;
   }
+  .mosasaur-hero {
+    width: 150px;
+    height: auto;
+  }
+}
+
+/* ----------------------------------------------------------
+   Mosasaur Mascot
+   ---------------------------------------------------------- */
+.hero-mascot {
+  margin-bottom: 16px;
+}
+
+.mosasaur-hero {
+  filter: drop-shadow(0 4px 12px rgba(255, 255, 255, 0.25));
+  animation: mosa-bob 4s ease-in-out infinite;
+}
+
+@keyframes mosa-bob {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  30%       { transform: translateY(-6px) rotate(1deg); }
+  70%       { transform: translateY(-3px) rotate(-0.5deg); }
+}
+
+/* Nav bar mosasaur icon */
+.logo img {
+  image-rendering: auto;
 }
 
 /* ----------------------------------------------------------

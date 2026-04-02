@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" fill="none">
+  <!-- Mosasaur icon — MOSA mascot (head + neck) -->
+  <!-- Body hint -->
+  <ellipse cx="42" cy="42" rx="18" ry="10" fill="#1a5c8a"/>
+  <!-- Neck -->
+  <path d="M30 36 Q26 26 30 18 Q34 12 38 14 Q42 16 40 26 Q36 34 30 36Z" fill="#1a5c8a"/>
+  <!-- Head -->
+  <path d="M30 18 Q26 10 20 8 Q12 5 8 10 Q4 14 8 20 Q12 26 20 22 Q26 20 30 18Z" fill="#1a5c8a"/>
+  <!-- Jaw -->
+  <path d="M8 20 Q4 22 2 20 Q0 17 2 14 Q4 12 8 14 Q10 16 8 20Z" fill="#1a5c8a"/>
+  <!-- Eye -->
+  <circle cx="18" cy="11" r="2.5" fill="#ffffff"/>
+  <circle cx="18.5" cy="11.5" r="1.2" fill="#0d2c52"/>
+  <!-- Teeth -->
+  <path d="M4 18 L5.5 15 L7 18 L8.5 15 L10 18" stroke="#ffffff" stroke-width="0.8" fill="none" stroke-linecap="round"/>
+  <!-- Front flipper -->
+  <path d="M36 38 Q30 46 24 52 Q22 54 25 54 Q32 51 38 44 Q42 38 40 36 Z" fill="#0e6b42"/>
+  <!-- Tail hint -->
+  <path d="M58 36 Q54 34 50 36 Q47 38 46 42 Q50 44 54 42 Z" fill="#1a5c8a"/>
+  <path d="M58 44 Q54 46 50 44 Q47 42 46 38 L54 40 Z" fill="#0d2c52"/>
+</svg>
