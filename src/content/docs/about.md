@@ -30,7 +30,7 @@ Our sponsored events and communities include MidCamp, Twin Cities Drupal Camp, A
 
 Beyond fiscal sponsorship, MOSA supports meetups and initiatives that improve the event experience for both speakers and attendees, especially in areas that promote inclusivity and accessibility:
 
-- [Drupal Recording Initiative](https://opencollective.com/drupal-recording-initiative)
+- [Drupal Recording Initiative](https://www.zeffy.com/en-US/donation-form/support-the-drupal-recording-initiative)
 - [Live Captioning Initiative](https://github.com/MidCamp/live-captioning)
 - [Drupal Chicago Meetup Group](https://www.meetup.com/drupalchicago/)
 

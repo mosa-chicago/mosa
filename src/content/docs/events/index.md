@@ -32,7 +32,7 @@ These communities helped establish MOSA as a fiscal sponsor:
 
 In addition to fiscal sponsorships, MOSA supports initiatives that improve open source events:
 
-- [Drupal Recording Initiative](https://opencollective.com/drupal-recording-initiative)
+- [Drupal Recording Initiative](https://www.zeffy.com/en-US/donation-form/support-the-drupal-recording-initiative)
 - [Live Captioning Initiative](https://github.com/MidCamp/live-captioning)
 - [Drupal Chicago Meetup Group](https://www.meetup.com/drupalchicago/)
 
