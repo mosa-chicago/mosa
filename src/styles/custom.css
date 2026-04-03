@@ -1,0 +1,106 @@
+/* MOSA brand colors — blue (#1a5c8a) and green (#0e6b42) */
+
+/* Light mode accent */
+:root {
+  --sl-color-accent-low: #d2e8f4;
+  --sl-color-accent: #1a5c8a;
+  --sl-color-accent-high: #0d3d5e;
+}
+
+/* Dark mode accent */
+:root[data-theme='dark'] {
+  --sl-color-accent-low: #0a2d45;
+  --sl-color-accent: #4da3d4;
+  --sl-color-accent-high: #87c5e8;
+}
+
+/* Hero splash page enhancements */
+.hero {
+  background: linear-gradient(135deg, #0d2c52 0%, #1a5c8a 50%, #0e6b42 100%);
+  border-radius: 0.75rem;
+  padding: 2rem;
+}
+
+.hero .hero-html {
+  color: #ffffff;
+}
+
+.hero h1 {
+  color: #ffffff !important;
+}
+
+.hero .tagline {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Primary CTA button — MOSA green */
+.hero .action.primary a,
+a.sl-flex.action.primary {
+  background-color: #0e6b42 !important;
+  border-color: #0e6b42 !important;
+  color: #ffffff !important;
+}
+
+.hero .action.primary a:hover,
+a.sl-flex.action.primary:hover {
+  background-color: #0a5233 !important;
+}
+
+/* Card grid hover lift */
+.sl-card {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.sl-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(26, 92, 138, 0.15);
+}
+
+/* Footer mosasaur badge */
+.mosa-footer-mascot {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  opacity: 0.7;
+  margin-top: 0.5rem;
+}
+
+.mosa-footer-mascot img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+/* Donation button container */
+.donate-embed {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* Sponsor tier cards */
+.sponsor-tiers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.sponsor-tier {
+  border: 2px solid var(--sl-color-accent);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.sponsor-tier h3 {
+  color: var(--sl-color-accent);
+  margin-top: 0;
+}
+
+/* Guidestar / Candid transparency seal */
+.candid-seal {
+  display: inline-block;
+  margin-top: 1rem;
+}

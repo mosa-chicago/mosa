@@ -1,0 +1,133 @@
+---
+// Custom footer for MOSA
+// Extends Starlight's default footer with Candid seal, CC0 notice, and mosasaur mascot
+import Default from '@astrojs/starlight/components/Footer.astro';
+---
+
+<Default {...Astro.props}>
+  <slot />
+</Default>
+
+<footer class="mosa-site-footer sl-flex">
+  <div class="mosa-footer-inner">
+    <div class="mosa-footer-row">
+      <div class="mosa-footer-links">
+        <a href="/about/">About</a>
+        <a href="/code-of-conduct/">Code of Conduct</a>
+        <a href="/contact/">Contact</a>
+        <a href="https://github.com/mosa-chicago/mosa" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+      <div class="mosa-footer-badges">
+        <a
+          aria-label="Midwest Open Source Alliance on Candid"
+          href="https://app.candid.org/profile/9737639/midwest-open-source-alliance-83-1560285/?pkId=5ad11844-2aac-42b7-9d55-8bf4b569f5e9"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            alt="Candid Platinum Transparency Seal"
+            src="https://widgets.guidestar.org/prod/v1/pdp/transparency-seal/9737639/svg"
+            width="85"
+            height="85"
+            loading="lazy"
+          />
+        </a>
+      </div>
+    </div>
+    <div class="mosa-footer-row mosa-footer-meta">
+      <div class="mosa-footer-mascot">
+        {/* Space reserved for the MOSA mosasaur mascot image */}
+        {/* Place the mosasaur PNG at public/images/mosasaur.png to activate */}
+        <img
+          src="/images/mosasaur.png"
+          alt="MOSA mosasaur mascot"
+          width="48"
+          height="48"
+          loading="lazy"
+          onerror="this.style.display='none'"
+        />
+        <span>Midwest Open Source Alliance</span>
+      </div>
+      <p class="mosa-footer-license">
+        Site content is dedicated to the public domain under
+        <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener noreferrer">CC0 1.0</a>.
+        This site is
+        <a href="https://www.netlify.com" target="_blank" rel="noopener noreferrer">powered by Netlify</a>.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .mosa-site-footer {
+    border-top: 1px solid var(--sl-color-hairline);
+    padding: 1.5rem var(--sl-content-pad-x);
+    margin-top: 1rem;
+    color: var(--sl-color-gray-3);
+    font-size: var(--sl-text-sm);
+  }
+
+  .mosa-footer-inner {
+    max-width: var(--sl-content-width);
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .mosa-footer-row {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+  }
+
+  .mosa-footer-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .mosa-footer-links a {
+    color: var(--sl-color-gray-3);
+    text-decoration: none;
+  }
+
+  .mosa-footer-links a:hover {
+    color: var(--sl-color-white);
+  }
+
+  .mosa-footer-badges img {
+    display: block;
+  }
+
+  .mosa-footer-meta {
+    margin-bottom: 0;
+  }
+
+  .mosa-footer-mascot {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    color: var(--sl-color-gray-2);
+  }
+
+  .mosa-footer-mascot img {
+    object-fit: contain;
+  }
+
+  .mosa-footer-license {
+    margin: 0;
+    color: var(--sl-color-gray-4);
+  }
+
+  .mosa-footer-license a {
+    color: var(--sl-color-accent);
+    text-decoration: none;
+  }
+
+  .mosa-footer-license a:hover {
+    text-decoration: underline;
+  }
+</style>
