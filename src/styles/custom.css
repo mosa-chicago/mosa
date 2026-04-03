@@ -1,17 +1,18 @@
 /* MOSA brand colors — blue (#1a5c8a) and green (#0e6b42) */
 
-/* Light mode accent */
-:root {
-  --sl-color-accent-low: #d2e8f4;
-  --sl-color-accent: #1a5c8a;
-  --sl-color-accent-high: #0d3d5e;
-}
-
-/* Dark mode accent */
+/* Dark mode accent (default / explicit dark) */
+:root,
 :root[data-theme='dark'] {
   --sl-color-accent-low: #0a2d45;
   --sl-color-accent: #4da3d4;
   --sl-color-accent-high: #87c5e8;
+}
+
+/* Light mode accent */
+:root[data-theme='light'] {
+  --sl-color-accent-low: #d2e8f4;
+  --sl-color-accent: #1a5c8a;
+  --sl-color-accent-high: #0d3d5e;
 }
 
 /* Hero splash page enhancements */
@@ -34,16 +35,24 @@
 }
 
 /* Primary CTA button — MOSA green */
-.hero .action.primary a,
-a.sl-flex.action.primary {
+.hero .sl-link-button.primary {
   background-color: #0e6b42 !important;
   border-color: #0e6b42 !important;
   color: #ffffff !important;
 }
 
-.hero .action.primary a:hover,
-a.sl-flex.action.primary:hover {
+.hero .sl-link-button.primary:hover {
   background-color: #0a5233 !important;
+}
+
+/* Secondary/minimal hero buttons — must stay white on dark gradient in all themes */
+.hero .sl-link-button.secondary,
+.hero .sl-link-button.minimal {
+  color: #ffffff !important;
+}
+
+.hero .sl-link-button.secondary {
+  border-color: rgba(255, 255, 255, 0.7) !important;
 }
 
 /* Card grid hover lift */

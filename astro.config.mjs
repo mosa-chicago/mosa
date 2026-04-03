@@ -9,7 +9,8 @@ export default defineConfig({
       title: 'MOSA',
       description: 'Midwest Open Source Alliance — promoting education, support, and development of Drupal and open source software in the Midwest and beyond.',
       logo: {
-        src: './src/assets/mosa-logo.svg',
+        light: './src/assets/mosa-logo.svg',
+        dark: './src/assets/mosa-logo-dark.svg',
         replacesTitle: false,
       },
       social: [
