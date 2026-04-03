@@ -1,23 +1,49 @@
-/* MOSA brand colors — blue (#1a5c8a) and green (#0e6b42) */
+/* MOSA brand colors — Drupal blue (#0077c0) primary, with rainbow open-source community accents */
 
 /* Dark mode accent (default / explicit dark) */
 :root,
 :root[data-theme='dark'] {
-  --sl-color-accent-low: #0a2d45;
-  --sl-color-accent: #4da3d4;
-  --sl-color-accent-high: #87c5e8;
+  --sl-color-accent-low: #003d73;
+  --sl-color-accent: #25aae1;
+  --sl-color-accent-high: #7dd4f4;
 }
 
 /* Light mode accent */
 :root[data-theme='light'] {
-  --sl-color-accent-low: #d2e8f4;
-  --sl-color-accent: #1a5c8a;
-  --sl-color-accent-high: #0d3d5e;
+  --sl-color-accent-low: #cce5f6;
+  --sl-color-accent: #0077c0;
+  --sl-color-accent-high: #004d8c;
+}
+
+/* Rainbow top stripe on the nav header — open source community diversity */
+header.header {
+  border-top: 4px solid;
+  border-image: linear-gradient(
+    to right,
+    #e74c3c,
+    #e67e22,
+    #f1c40f,
+    #2ecc71,
+    #0077c0,
+    #25aae1,
+    #9b59b6
+  ) 1;
 }
 
 /* Hero splash page enhancements */
 .hero {
-  background: linear-gradient(135deg, #0d2c52 0%, #1a5c8a 50%, #0e6b42 100%);
+  background: linear-gradient(
+    135deg,
+    #001e4d 0%,
+    #0077c0 22%,
+    #25aae1 40%,
+    #2ecc71 55%,
+    #f1c40f 67%,
+    #e67e22 77%,
+    #e74c3c 87%,
+    #9b59b6 95%,
+    #0077c0 100%
+  );
   border-radius: 0.75rem;
   padding: 2rem;
 }
@@ -34,15 +60,15 @@
   color: rgba(255, 255, 255, 0.9) !important;
 }
 
-/* Primary CTA button — MOSA green */
+/* Primary CTA button — Drupal blue */
 .hero .sl-link-button.primary {
-  background-color: #0e6b42 !important;
-  border-color: #0e6b42 !important;
+  background-color: #0077c0 !important;
+  border-color: #0077c0 !important;
   color: #ffffff !important;
 }
 
 .hero .sl-link-button.primary:hover {
-  background-color: #0a5233 !important;
+  background-color: #005a90 !important;
 }
 
 /* Secondary/minimal hero buttons — must stay white on dark gradient in all themes */
@@ -62,7 +88,7 @@
 
 .sl-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(26, 92, 138, 0.15);
+  box-shadow: 0 4px 16px rgba(0, 119, 192, 0.15);
 }
 
 /* Footer mosasaur badge */
