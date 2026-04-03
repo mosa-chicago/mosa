@@ -6,13 +6,8 @@ export default defineConfig({
   site: 'https://midwestopensourcealliance.org',
   integrations: [
     starlight({
-      title: 'MOSA',
+      title: '🤝 MOSA',
       description: 'Midwest Open Source Alliance — promoting education, support, and development of Drupal and open source software in the Midwest and beyond.',
-      logo: {
-        light: './src/assets/mosa-logo.svg',
-        dark: './src/assets/mosa-logo-dark.svg',
-        replacesTitle: false,
-      },
       social: [
         { icon: 'github', label: 'GitHub', href: 'https://github.com/mosa-chicago/mosa' },
       ],
