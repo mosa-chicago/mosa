@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" fill="none" role="img" aria-label="MOSA logo">
-  <!-- Mosasaur icon (simplified head silhouette) -->
-  <path d="M8 28 Q6 20 10 14 Q14 8 18 10 Q22 12 20 20 Q18 26 14 28 Z" fill="#1a5c8a"/>
-  <path d="M10 14 Q7 8 4 6 Q1 5 1 9 Q2 13 6 14 Z" fill="#1a5c8a"/>
-  <circle cx="5" cy="8" r="1.5" fill="#ffffff"/>
-  <path d="M18 26 Q24 28 30 26 Q34 24 34 28 Q30 30 22 30 Z" fill="#0e6b42"/>
-  <!-- MOSA text -->
-  <text x="38" y="27" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="18" fill="#1a5c8a">MOSA</text>
-</svg>
