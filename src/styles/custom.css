@@ -1,4 +1,4 @@
-/* MOSA brand colors — Drupal blue (#0077c0) primary, with rainbow open-source community accents */
+/* MOSA brand colors — Drupal blue (#0077c0) primary, with subtle open-source community accents */
 
 /* Dark mode accent (default / explicit dark) */
 :root,
@@ -15,16 +15,13 @@
   --sl-color-accent-high: #004d8c;
 }
 
-/* Rainbow top stripe on the nav header — open source community diversity */
+/* Subtle accent stripe on the nav header — a nod to open source community diversity */
 header.header {
   border-top: 4px solid;
   border-image: linear-gradient(
     to right,
-    #e74c3c,
-    #e67e22,
     #2ecc71,
     #0077c0,
-    #25aae1,
     #9b59b6
   ) 1;
 }
@@ -34,13 +31,8 @@ header.header {
   background: linear-gradient(
     135deg,
     #001e4d 0%,
-    #0077c0 22%,
-    #25aae1 40%,
-    #2ecc71 57%,
-    #e67e22 72%,
-    #e74c3c 85%,
-    #9b59b6 95%,
-    #0077c0 100%
+    #0077c0 50%,
+    #6a3fa0 100%
   );
   border-radius: 0.75rem;
   padding: 2rem;
