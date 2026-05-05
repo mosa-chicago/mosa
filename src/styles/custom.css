@@ -1,0 +1,131 @@
+/* MOSA brand colors — Drupal blue (#0077c0) primary, with subtle open-source community accents */
+
+/* Dark mode accent (default / explicit dark) */
+:root,
+:root[data-theme='dark'] {
+  --sl-color-accent-low: #003d73;
+  --sl-color-accent: #25aae1;
+  --sl-color-accent-high: #7dd4f4;
+}
+
+/* Light mode accent */
+:root[data-theme='light'] {
+  --sl-color-accent-low: #cce5f6;
+  --sl-color-accent: #0077c0;
+  --sl-color-accent-high: #004d8c;
+}
+
+/* Subtle accent stripe on the nav header — a nod to open source community diversity */
+header.header {
+  border-top: 4px solid;
+  border-image: linear-gradient(
+    to right,
+    #2ecc71,
+    #0077c0,
+    #9b59b6
+  ) 1;
+}
+
+/* Hero splash page enhancements */
+.hero {
+  background: linear-gradient(
+    135deg,
+    #001e4d 0%,
+    #0077c0 50%,
+    #6a3fa0 100%
+  );
+  border-radius: 0.75rem;
+  padding: 2rem;
+}
+
+.hero .hero-html {
+  color: #ffffff;
+}
+
+.hero h1 {
+  color: #ffffff !important;
+}
+
+.hero .tagline {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Primary CTA button — Drupal blue */
+.hero .sl-link-button.primary {
+  background-color: #0077c0 !important;
+  border-color: #0077c0 !important;
+  color: #ffffff !important;
+}
+
+.hero .sl-link-button.primary:hover {
+  background-color: #005a90 !important;
+}
+
+/* Secondary/minimal hero buttons — must stay white on dark gradient in all themes */
+.hero .sl-link-button.secondary,
+.hero .sl-link-button.minimal {
+  color: #ffffff !important;
+}
+
+.hero .sl-link-button.secondary {
+  border-color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Card grid hover lift */
+.sl-card {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.sl-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 119, 192, 0.15);
+}
+
+/* Footer mosasaur badge */
+.mosa-footer-mascot {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  opacity: 0.7;
+  margin-top: 0.5rem;
+}
+
+.mosa-footer-mascot img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+/* Donation button container */
+.donate-embed {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* Sponsor tier cards */
+.sponsor-tiers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.sponsor-tier {
+  border: 2px solid var(--sl-color-accent);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.sponsor-tier h3 {
+  color: var(--sl-color-accent);
+  margin-top: 0;
+}
+
+/* Guidestar / Candid transparency seal */
+.candid-seal {
+  display: inline-block;
+  margin-top: 1rem;
+}

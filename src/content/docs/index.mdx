@@ -1,0 +1,72 @@
+---
+title: Midwest Open Source Alliance
+description: MOSA promotes education, support, and development of Drupal and related open source software within the Midwest community and beyond.
+template: splash
+hero:
+  title: Building Open Source Community
+  tagline: Midwest Open Source Alliance (MOSA) promotes the education, support, and development of Drupal and open source software—for a stronger, more inclusive community.
+  actions:
+    - text: About MOSA
+      link: /about/
+      icon: information
+      variant: primary
+    - text: Donate
+      link: /donate/
+      icon: heart
+      variant: secondary
+    - text: Sponsor MOSA
+      link: /sponsor/
+      icon: star
+      variant: minimal
+---
+
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+import SponsoredCommunities from '../../components/SponsoredCommunities.astro';
+
+## Our Mission
+
+<CardGrid>
+  <Card title="Education" icon="open-book">
+    Promoting education and the advancement of Drupal and related open source software throughout the Midwest and beyond.
+  </Card>
+  <Card title="Fiscal Sponsorship" icon="document">
+    Fiscal sponsor for 13+ open source events and communities, including MidCamp, A11yTalks, Decoupled Days, and more.
+  </Card>
+  <Card title="Inclusivity" icon="heart">
+    Championing accessibility and diversity in open source—supporting initiatives that make events better for speakers and attendees alike.
+  </Card>
+  <Card title="501(c)(3) Nonprofit" icon="approve-check">
+    A registered Illinois nonprofit with federal tax-exempt status since 2018 (EIN 83-1560285). Donations are tax-deductible.
+  </Card>
+</CardGrid>
+
+## Get Involved
+
+<CardGrid>
+  <LinkCard
+    title="Sponsored Events & Communities"
+    description="See the open source events and communities we fiscally sponsor across the country."
+    href="/events/"
+  />
+  <LinkCard
+    title="Upcoming Meetings"
+    description="Our board meetings are open to the community. Join us and have a voice."
+    href="/meetings/"
+  />
+  <LinkCard
+    title="Sponsor MOSA"
+    description="Help sustain open source community work by becoming a MOSA sponsor."
+    href="/sponsor/"
+  />
+  <LinkCard
+    title="Donate"
+    description="Make a tax-deductible donation to support our programs and community."
+    href="/donate/"
+  />
+</CardGrid>
+
+## Sponsored Events & Communities
+
+MOSA is the fiscal sponsor for these open source events and communities. [Learn more about fiscal sponsorship →](/events/)
+
+<SponsoredCommunities variant="cards" />
