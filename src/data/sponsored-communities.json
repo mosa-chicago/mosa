@@ -80,5 +80,25 @@
       "description": "Weekly podcast about all things Drupal.",
       "since": "2026"
     }
+  ],
+  "initiatives": [
+    {
+      "name": "Drupal Recording Initiative",
+      "url": "https://www.zeffy.com/en-US/donation-form/support-the-drupal-recording-initiative",
+      "description": "Community initiative to record and archive Drupal event sessions for broader access.",
+      "type": "initiative"
+    },
+    {
+      "name": "Live Captioning Initiative",
+      "url": "https://github.com/MidCamp/live-captioning",
+      "description": "Provides live captioning at Drupal events to improve accessibility for all attendees.",
+      "type": "initiative"
+    },
+    {
+      "name": "Drupal Chicago Meetup Group",
+      "url": "https://www.meetup.com/drupalchicago/",
+      "description": "Local meetup group for Drupal enthusiasts in the Chicago area.",
+      "type": "initiative"
+    }
   ]
 }
