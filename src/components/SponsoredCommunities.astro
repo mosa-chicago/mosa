@@ -20,7 +20,7 @@ const { variant = 'cards' } = Astro.props;
 
 {variant === 'cards' && (
   <div class="sponsored-grid">
-    {data.current.map((community) => (
+    {[...data.founding, ...data.current].map((community) => (
       <div class="sponsored-card">
         <div class="sponsored-card-body">
           {community.url
@@ -29,50 +29,47 @@ const { variant = 'cards' } = Astro.props;
           }
           <p class="sponsored-card-desc">{community.description}</p>
         </div>
-        <span class="sponsored-card-since">since {community.since}</span>
+        <span class="sponsored-card-since">
+          {community.since === 'founding' ? 'founding member' : `since ${community.since}`}
+        </span>
       </div>
     ))}
   </div>
 )}
 
 {variant === 'full' && (
-  <>
-    <h2>Founding Sponsored Members</h2>
-    <ul>
+  <table>
+    <thead>
+      <tr>
+        <th>Community</th>
+        <th>Member Since</th>
+      </tr>
+    </thead>
+    <tbody>
       {data.founding.map((community) => (
-        <li>
-          {community.url
-            ? <a href={community.url}><strong>{community.name}</strong></a>
-            : <strong>{community.name}</strong>
-          }
-          {' '}— {community.description}
-        </li>
-      ))}
-    </ul>
-
-    <h2>Current Sponsored Members</h2>
-    <table>
-      <thead>
         <tr>
-          <th>Community</th>
-          <th>Member Since</th>
+          <td>
+            {community.url
+              ? <a href={community.url} target="_blank" rel="noopener noreferrer">{community.name}</a>
+              : community.name
+            }
+          </td>
+          <td>Founding</td>
         </tr>
-      </thead>
-      <tbody>
-        {data.current.map((community) => (
-          <tr>
-            <td>
-              {community.url
-                ? <a href={community.url} target="_blank" rel="noopener noreferrer">{community.name}</a>
-                : community.name
-              }
-            </td>
-            <td>{community.since}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  </>
+      ))}
+      {data.current.map((community) => (
+        <tr>
+          <td>
+            {community.url
+              ? <a href={community.url} target="_blank" rel="noopener noreferrer">{community.name}</a>
+              : community.name
+            }
+          </td>
+          <td>{community.since}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
 )}
 
 <style>
