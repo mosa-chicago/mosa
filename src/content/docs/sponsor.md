@@ -20,33 +20,6 @@ Your sponsorship supports:
 Our sponsorship prospectus is being finalized. Contact us to discuss sponsorship opportunities in the meantime.
 :::
 
-<div class="sponsor-tiers">
-
-### 🥇 Gold Sponsor
-**$5,000+/year**
-- Premier logo placement on MOSA website
-- Recognition at all sponsored events
-- Social media spotlights
-- Invitation to meet the board
-
-### 🥈 Silver Sponsor
-**$2,500/year**
-- Logo on MOSA website
-- Recognition at major sponsored events
-- Social media recognition
-
-### 🥉 Bronze Sponsor
-**$1,000/year**
-- Name/logo on MOSA website
-- Community recognition
-
-### 🤝 Community Sponsor
-**$500/year**
-- Name on MOSA website
-- Community recognition
-
-</div>
-
 ## Current Sponsors
 
 *Interested in being featured here? [Contact us](/contact/) to become a sponsor.*
