@@ -22,17 +22,9 @@ MOSA exists to strengthen the open source community by:
 
 One of MOSA's primary roles is serving as a **fiscal sponsor** for open source events and communities. As a fiscal sponsor, we handle the financial and legal infrastructure so community organizers can focus on running great events.
 
-Our sponsored events and communities include MidCamp, Twin Cities Drupal Camp, A11yTalks, Decoupled Days, Drupal Asheville, Stanford WebCamp, the Pacific Northwest Drupal Summit, Drupal NJ, Drupal Diversity & Inclusion, NedCamp, Black in Drupal, and Talking Drupal.
+Our sponsored events and communities include MidCamp, Twin Cities Drupal Camp, A11yTalks, Decoupled Days, Drupal Asheville, Stanford WebCamp, the Pacific Northwest Drupal Summit, Drupal NJ, Drupal Diversity & Inclusion, NedCamp, Black in Drupal, Talking Drupal, the Drupal Recording Initiative, Live Captioning Initiative, and the Drupal Chicago Meetup Group.
 
 [See the full list of sponsored events →](/events/)
-
-## Supported Initiatives
-
-Beyond fiscal sponsorship, MOSA supports meetups and initiatives that improve the event experience for both speakers and attendees, especially in areas that promote inclusivity and accessibility:
-
-- [Drupal Recording Initiative](https://www.zeffy.com/en-US/donation-form/support-the-drupal-recording-initiative)
-- [Live Captioning Initiative](https://github.com/MidCamp/live-captioning)
-- [Drupal Chicago Meetup Group](https://www.meetup.com/drupalchicago/)
 
 ## Transparency
 

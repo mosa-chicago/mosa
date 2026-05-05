@@ -16,11 +16,23 @@ interface Props {
   variant?: 'cards' | 'full';
 }
 const { variant = 'cards' } = Astro.props;
+
+function getSinceLabel(community: { since?: string; type?: string }): string {
+  if (community.type === 'initiative') return 'supported initiative';
+  if (community.since === 'founding') return 'founding member';
+  return `since ${community.since}`;
+}
+
+function getSinceLabelFull(community: { since?: string; type?: string }): string {
+  if (community.type === 'initiative') return 'Supported Initiative';
+  if (community.since === 'founding') return 'Founding';
+  return community.since ?? '';
+}
 ---
 
 {variant === 'cards' && (
   <div class="sponsored-grid">
-    {[...data.founding, ...data.current].map((community) => (
+    {[...data.founding, ...data.current, ...data.initiatives].map((community) => (
       <div class="sponsored-card">
         <div class="sponsored-card-body">
           {community.url
@@ -30,7 +42,7 @@ const { variant = 'cards' } = Astro.props;
           <p class="sponsored-card-desc">{community.description}</p>
         </div>
         <span class="sponsored-card-since">
-          {community.since === 'founding' ? 'founding member' : `since ${community.since}`}
+          {getSinceLabel(community)}
         </span>
       </div>
     ))}
@@ -66,6 +78,17 @@ const { variant = 'cards' } = Astro.props;
             }
           </td>
           <td>{community.since}</td>
+        </tr>
+      ))}
+      {data.initiatives.map((community) => (
+        <tr>
+          <td>
+            {community.url
+              ? <a href={community.url} target="_blank" rel="noopener noreferrer">{community.name}</a>
+              : community.name
+            }
+          </td>
+          <td>{getSinceLabelFull(community)}</td>
         </tr>
       ))}
     </tbody>
