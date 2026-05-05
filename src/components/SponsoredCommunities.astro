@@ -76,6 +76,7 @@ const { variant = 'cards' } = Astro.props;
   .sponsored-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-auto-rows: 160px;
     gap: 1rem;
     margin-top: 1rem;
   }
@@ -89,6 +90,7 @@ const { variant = 'cards' } = Astro.props;
     padding: 1rem;
     background: var(--sl-color-bg-nav);
     transition: border-color 0.2s;
+    overflow: hidden;
   }
 
   .sponsored-card:hover {
