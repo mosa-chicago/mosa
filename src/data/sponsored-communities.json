@@ -1,0 +1,84 @@
+{
+  "founding": [
+    {
+      "name": "Midwest Area Drupal Camp (MidCamp)",
+      "url": "https://www.midcamp.org/",
+      "description": "The annual Drupal camp serving the Midwest region.",
+      "since": "founding"
+    },
+    {
+      "name": "Twin Cities Drupal Camp",
+      "url": "http://tcdrupal.org/",
+      "description": "Annual Drupal camp for the Twin Cities community.",
+      "since": "founding"
+    },
+    {
+      "name": "Midwest Drupal Summit",
+      "url": null,
+      "description": "Annual gathering of Midwest Drupal community leaders.",
+      "since": "founding"
+    }
+  ],
+  "current": [
+    {
+      "name": "A11yTalks",
+      "url": "https://a11ytalks.com/",
+      "description": "Monthly virtual meetup focused on digital accessibility.",
+      "since": "2024"
+    },
+    {
+      "name": "Drupal Asheville",
+      "url": "https://www.drupalasheville.com/",
+      "description": "Annual Drupal camp in Asheville, NC.",
+      "since": "2024"
+    },
+    {
+      "name": "Decoupled Days",
+      "url": "https://www.decoupleddays.com/",
+      "description": "Conference focused on decoupled and headless Drupal.",
+      "since": "2024"
+    },
+    {
+      "name": "Stanford WebCamp",
+      "url": "https://webcamp.stanford.edu/",
+      "description": "Web community camp hosted by Stanford University.",
+      "since": "2024"
+    },
+    {
+      "name": "Pacific Northwest Drupal Summit",
+      "url": "https://pnwdrupalsummit.org/",
+      "description": "Annual Drupal summit for the Pacific Northwest.",
+      "since": "2024"
+    },
+    {
+      "name": "Drupal NJ",
+      "url": "https://www.drupalcampnj.org/",
+      "description": "Annual Drupal camp for the New Jersey and greater NYC area.",
+      "since": "2024"
+    },
+    {
+      "name": "Drupal Diversity & Inclusion",
+      "url": "https://www.drupaldiversity.com/",
+      "description": "Initiative advancing diversity, equity, and inclusion in Drupal.",
+      "since": "2024"
+    },
+    {
+      "name": "New England Drupal Camp (NedCamp)",
+      "url": "https://nedcamp.org/",
+      "description": "Annual Drupal camp for the New England region.",
+      "since": "2026"
+    },
+    {
+      "name": "Black in Drupal",
+      "url": "https://www.blackindrupal.org/",
+      "description": "Community celebrating and supporting Black voices in Drupal.",
+      "since": "2026"
+    },
+    {
+      "name": "Talking Drupal",
+      "url": "https://talkingdrupal.com/",
+      "description": "Weekly podcast about all things Drupal.",
+      "since": "2026"
+    }
+  ]
+}

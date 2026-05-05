@@ -1,0 +1,125 @@
+---
+/**
+ * SponsoredCommunities.astro
+ *
+ * Renders the list of MOSA-sponsored events and communities from
+ * src/data/sponsored-communities.json — a single source of truth
+ * used on both the homepage and the events/index page.
+ *
+ * Props:
+ *   variant: "cards" (default) — compact card grid for the homepage
+ *            "full"            — full table + founding members for the events page
+ */
+import data from '../data/sponsored-communities.json';
+
+interface Props {
+  variant?: 'cards' | 'full';
+}
+const { variant = 'cards' } = Astro.props;
+---
+
+{variant === 'cards' && (
+  <div class="sponsored-grid">
+    {data.current.map((community) => (
+      <div class="sponsored-card">
+        <div class="sponsored-card-body">
+          {community.url
+            ? <a href={community.url} class="sponsored-card-name" target="_blank" rel="noopener noreferrer">{community.name}</a>
+            : <span class="sponsored-card-name">{community.name}</span>
+          }
+          <p class="sponsored-card-desc">{community.description}</p>
+        </div>
+        <span class="sponsored-card-since">since {community.since}</span>
+      </div>
+    ))}
+  </div>
+)}
+
+{variant === 'full' && (
+  <>
+    <h2>Founding Sponsored Members</h2>
+    <ul>
+      {data.founding.map((community) => (
+        <li>
+          {community.url
+            ? <a href={community.url}><strong>{community.name}</strong></a>
+            : <strong>{community.name}</strong>
+          }
+          {' '}— {community.description}
+        </li>
+      ))}
+    </ul>
+
+    <h2>Current Sponsored Members</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Community</th>
+          <th>Member Since</th>
+        </tr>
+      </thead>
+      <tbody>
+        {data.current.map((community) => (
+          <tr>
+            <td>
+              {community.url
+                ? <a href={community.url} target="_blank" rel="noopener noreferrer">{community.name}</a>
+                : community.name
+              }
+            </td>
+            <td>{community.since}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </>
+)}
+
+<style>
+  .sponsored-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .sponsored-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    background: var(--sl-color-bg-nav);
+    transition: border-color 0.2s;
+  }
+
+  .sponsored-card:hover {
+    border-color: var(--sl-color-accent);
+  }
+
+  .sponsored-card-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--sl-color-text);
+    text-decoration: none;
+  }
+
+  a.sponsored-card-name:hover {
+    color: var(--sl-color-accent);
+    text-decoration: underline;
+  }
+
+  .sponsored-card-desc {
+    margin: 0.4rem 0 0.6rem;
+    font-size: 0.82rem;
+    color: var(--sl-color-gray-2);
+    line-height: 1.4;
+  }
+
+  .sponsored-card-since {
+    font-size: 0.75rem;
+    color: var(--sl-color-gray-3);
+    font-style: italic;
+  }
+</style>
