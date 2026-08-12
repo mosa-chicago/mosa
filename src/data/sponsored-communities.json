@@ -79,6 +79,12 @@
       "url": "https://talkingdrupal.com/",
       "description": "Weekly podcast about all things Drupal.",
       "since": "2026"
+    },
+    {
+      "name": "Florida DrupalCamp",
+      "url": "https://fldrupal.camp",
+      "description": "Florida Drupal Camp is an annual, volunteer-led regional event for users and developers of the Drupal content management system.",
+      "since": "2026"
     }
   ],
   "initiatives": [
